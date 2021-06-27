@@ -1,3 +1,11 @@
+<?php
+
+require_once  "./function/sessions.php";
+
+$access = $_SESSION['role'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,23 +26,78 @@
                     <div class="tile_count">
                         <div class="col-md-2 col-sm-4  tile_stats_count">
                             <span class="count_top"><i class="fa fa-cubes"></i> Total Data Barang</span>
-                            <div class="count">2500</div>
+                            <div class="count">
+                            <?php
+                                $sql = "SELECT COUNT(*) FROM barang";
+                                $result = mysqli_query($conn, $sql);
+                              
+                                if (mysqli_num_rows($result)>0){
+                                    while ($row = mysqli_fetch_assoc($result)){
+                                        echo $row['COUNT(*)'];
+                                    }
+                                }
+                            ?>
+                            </div>
                         </div>
                         <div class="col-md-2 col-sm-4  tile_stats_count">
-                            <span class="count_top"><i class="fa fa-archive"></i> Total Data Inventori</span>
-                            <div class="count">2500</div>
+                            <span class="count_top"><i class="fa fa-archive"></i> Total Data Inventaris</span>
+                            <div class="count">
+                            <?php
+                                $sql = "SELECT COUNT(*) FROM inventaris";
+                                $result = mysqli_query($conn, $sql);
+                              
+                                if (mysqli_num_rows($result)>0){
+                                    while ($row = mysqli_fetch_assoc($result)){
+                                        echo $row['COUNT(*)'];
+                                    }
+                                }
+                            ?>
+                            </div>
                         </div>
                         <div class="col-md-2 col-sm-4  tile_stats_count">
                             <span class="count_top"><i class="fa fa-gear"></i> Total Kategori</span>
-                            <div class="count">123.50</div>
+                            <div class="count">
+                            <?php
+                                $sql = "SELECT COUNT(*) FROM kategori";
+                                $result = mysqli_query($conn, $sql);
+                              
+                                if (mysqli_num_rows($result)>0){
+                                    while ($row = mysqli_fetch_assoc($result)){
+                                        echo $row['COUNT(*)'];
+                                    }
+                                }
+                            ?>
+                            </div>
                         </div>
                         <div class="col-md-2 col-sm-4  tile_stats_count">
                             <span class="count_top"><i class="fa fa-gear"></i> Total Merk</span>
-                            <div class="count">2,500</div>
+                            <div class="count">
+                            <?php
+                                $sql = "SELECT COUNT(*) FROM merk";
+                                $result = mysqli_query($conn, $sql);
+                              
+                                if (mysqli_num_rows($result)>0){
+                                    while ($row = mysqli_fetch_assoc($result)){
+                                        echo $row['COUNT(*)'];
+                                    }
+                                }
+                            ?>
+                            </div>
                         </div>
                         <div class="col-md-2 col-sm-4  tile_stats_count">
                             <span class="count_top"><i class="fa fa-gear"></i> Total Series</span>
-                            <div class="count">4,567</div>
+                            <div class="count">
+                            <?php
+                                $sql = "SELECT COUNT(*) FROM series";
+                                $result = mysqli_query($conn, $sql);
+                              
+                                if (mysqli_num_rows($result)>0){
+                                    while ($row = mysqli_fetch_assoc($result)){
+                                        echo $row['COUNT(*)'];
+                                    }
+                                }
+                            ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,6 +127,7 @@
                                                 cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
+                                                        <th>#</th>
                                                         <th>Nomor Inventori</th>
                                                         <th>Kategori</th>
                                                         <th>Merk</th>
@@ -84,24 +148,39 @@
                                                 </thead>
 
                                                 <tbody>
+                                                    <?php
+                                                        $sql = "SELECT * FROM inventaris ORDER BY id_inventaris ASC";
+                                                        $result = mysqli_query($conn, $sql);
+                                            
+                                                        $count = 1;
+                                                    
+                                                        if (mysqli_num_rows($result)>0){
+                                                            while ($row = mysqli_fetch_assoc($result)){
+                                                    ?>
                                                     <tr>
-                                                        <td>IT.023.0220.1.C032.00001</td>
-                                                        <td>Converter</td>
-                                                        <td>NETLINK</td>
-                                                        <td>Rp. 25.000</td>
-                                                        <td>HTB-3100</td>
-                                                        <td>H-20190700099</td>
-                                                        <td>19-Nov-2019</td>
-                                                        <td>Non Seat Management</td>
-                                                        <td>SISTEM INFORMASI</td>
-                                                        <td>DIVRE IV Tanjungkarang</td>
-                                                        <td>00024/C032/12/2019</td>
-                                                        <td>12-Dec-2019</td>
-                                                        <td>SAHRONI</td>
-                                                        <td>ARI AKBAR DAULAY</td>
-                                                        <td>ARI AKBAR DAULAY</td>
-                                                        <td>DIVRE IV Tanjungkarang</td>
+                                                        <td><?php echo $count; ?></td>
+                                                        <td><?php echo $row['nomor_inventaris']; ?></td>
+                                                        <td><?php echo $row['kategori']; ?></td>
+                                                        <td><?php echo $row['merk']; ?></td>
+                                                        <td>Rp. <?php echo number_format($row['harga']); ?></td>
+                                                        <td><?php echo $row['series']; ?></td>
+                                                        <td><?php echo $row['serial_number']; ?></td>
+                                                        <td><?php echo date('D, d F Y', strtotime($row['tanggal_pengadaan'])); ?></td>
+                                                        <td><?php echo $row['tipe_pengadaan']; ?></td>
+                                                        <td><?php echo $row['unit_pengadaan']; ?></td>
+                                                        <td><?php echo $row['area_pengadaan']; ?></td>
+                                                        <td><?php echo $row['nomor_dokumen']; ?></td>
+                                                        <td><?php echo date('D, d F Y', strtotime($row['tanggal_serah_terima'])); ?></td>
+                                                        <td><?php echo $row['penyerah']; ?></td>
+                                                        <td><?php echo $row['penerima']; ?></td>
+                                                        <td><?php echo $row['pengguna']; ?></td>
+                                                        <td><?php echo $row['area_penggunaan']; ?></td>
                                                     </tr>
+                                                    <?php
+                                                        $count = $count + 1;
+                                                        }
+                                                        }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div>

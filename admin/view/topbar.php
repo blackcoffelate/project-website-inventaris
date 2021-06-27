@@ -8,11 +8,11 @@
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                         data-toggle="dropdown" aria-expanded="false">
-                        <img src="images/man.png" alt="">Administrator
+                        <img src="images/man.png" alt=""><?php echo $_SESSION['nama_lengkap']?>
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="javascript:;"> Profile</a>
-                        <a class="dropdown-item" href="../"><i class="fa fa-sign-out pull-right"></i>
+                        <a class="dropdown-item" href="./../admin/function/logout.php"><i class="fa fa-sign-out pull-right"></i>
                             Log Out</a>
                     </div>
                 </li>

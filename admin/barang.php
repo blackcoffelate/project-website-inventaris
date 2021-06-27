@@ -1,3 +1,11 @@
+<?php
+
+require_once  "./function/sessions.php";
+
+$access = $_SESSION['role'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,23 +55,39 @@
                                                         <th>Series</th>
                                                         <th>Serial Number</th>
                                                         <th>Stok</th>
+                                                        <th>Posted By</th>
                                                         <th>Tanggal Masuk</th>
                                                         <th>#</th>
                                                     </tr>
                                                 </thead>
 
                                                 <tbody>
+                                                    <?php
+                                                        $sql = "SELECT * FROM barang ORDER BY id_barang ASC";
+                                                        $result = mysqli_query($conn, $sql);
+                                            
+                                                        $count = 1;
+                                                    
+                                                        if (mysqli_num_rows($result)>0){
+                                                            while ($row = mysqli_fetch_assoc($result)){
+                                                    ?>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Converter</td>
-                                                        <td>NETLINK</td>
-                                                        <td>Rp. 25.000</td>
-                                                        <td>HTB-3100</td>
-                                                        <td>H-20190700099</td>
-                                                        <td>11</td>
-                                                        <td>21/02/2021</td>
-                                                        <td><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="EDIT"><i class="fa fa-pencil"></i></a>  &nbsp; <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="DELETE"><i class="fa fa-trash"></i></a></td>
+                                                        <td><?php echo $count; ?></td>
+                                                        <td><?php echo $row['kategori']; ?></td>
+                                                        <td><?php echo $row['merk']; ?></td>
+                                                        <td>Rp. <?php echo number_format($row['harga']); ?></td>
+                                                        <td><?php echo $row['series']; ?></td>
+                                                        <td><?php echo $row['serial_number']; ?></td>
+                                                        <td><?php echo $row['stok']; ?></td>
+                                                        <td><?php echo $row['posted']; ?></td>
+                                                        <td><?php echo date('D, d F Y', strtotime($row['create_at'])); ?></td>
+                                                        <td><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="EDIT"><i class="fa fa-pencil"></i></a>  &nbsp; <a href="delete" onclick="window.location = 'function/barang_delete.php?id_barang=<?php echo $row['id_barang']; ?>'; return false;" data-toggle="tooltip" data-placement="top" title="" data-original-title="DELETE"><i class="fa fa-trash"></i></a></td>
                                                     </tr>
+                                                    <?php
+                                                        $count = $count + 1;
+                                                        }
+                                                        }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div>

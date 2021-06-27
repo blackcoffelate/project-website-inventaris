@@ -1,3 +1,15 @@
+<?php
+
+require_once  "./function/sessions.php";
+
+$access = $_SESSION['role'];
+
+if(isset($_POST['nama_lengkap'])){
+    require_once "function/anggota_add.php";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,48 +51,50 @@
                                 </div>
                                 <div class="x_content">
                                     <br />
-                                    <form class="form-horizontal form-label-left">
+                                    <?php 
+                                        if (isset($check_data)){
+                                            echo $check_data;
+                                        }
+                                    ?>
+                                    <form class="form-horizontal form-label-left" method="POST">
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Nama Lengkap</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" class="form-control" placeholder="Type here...">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="nama_lengkap">
                                             </div>
                                         </div>
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Username</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" class="form-control" placeholder="Type here...">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="username">
                                             </div>
                                         </div>
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Password</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="password" class="form-control" placeholder="Type here...">
+                                                <input type="password" class="form-control" placeholder="Type here..." name="password">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="control-label col-md-3 col-sm-3">Jabatan</label>
                                             <div class="col-md-9 col-sm-9">
-                                                <select class="selectpicker col-md-12 col-sm-12 form-control"
-                                                    data-live-search="true">
-                                                    <option data-tokens="ketchup mustard" disabled selected>-- kategori
-                                                        --</option>
-                                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                                                    <option data-tokens="frosting">Sugar, Spice and all things nice
-                                                    </option>
+                                                <select class="selectpicker col-md-12 col-sm-12 form-control" data-live-search="true" name="jabatan">
+                                                    <option data-tokens="-" disabled selected>-- kategori --</option>
+                                                    <option data-tokens="pimpinan" value="1">Pimpinan</option>
+                                                    <option data-tokens="anggota" value="2">Anggota</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Nomor Telepon</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" class="form-control" placeholder="Type here...">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="nomor_telp">
                                             </div>
                                         </div>
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Alamat Lengkap</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" class="form-control" placeholder="Type here...">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="alamat_lengkap">
                                             </div>
                                         </div>
                                         

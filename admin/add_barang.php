@@ -1,3 +1,15 @@
+<?php
+
+require_once  "./function/sessions.php";
+
+$access = $_SESSION['role'];
+
+if(isset($_POST['harga'])){
+    require_once "function/barang_add.php";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,16 +51,29 @@
                                 </div>
                                 <div class="x_content">
                                     <br />
-                                    <form class="form-horizontal form-label-left">
+                                    <?php 
+                                        if (isset($check_data)){
+                                            echo $check_data;
+                                        }
+                                    ?>
+                                    <form class="form-horizontal form-label-left" method="POST">
                                         <div class="form-group row">
                                             <label class="control-label col-md-3 col-sm-3">Kategori</label>
                                             <div class="col-md-9 col-sm-9">
-                                                <select class="selectpicker col-md-12 col-sm-12 form-control"
-                                                    data-live-search="true">
-                                                    <option data-tokens="ketchup mustard" disabled selected>-- kategori
-                                                        --</option>
-                                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                                                    <option data-tokens="frosting">Sugar, Spice and all things nice
+                                                <select class="selectpicker col-md-12 col-sm-12 form-control" data-live-search="true" name="kategori">
+                                                    <option data-tokens="ketchup mustard" disabled selected>-- kategori --</option>
+                                                    <?php
+                                                        $sql = "SELECT * FROM kategori ORDER BY id_kategori ASC";
+                                                        $result = mysqli_query($conn, $sql);
+                                                    
+                                                        if (mysqli_num_rows($result)>0){
+                                                            while ($row = mysqli_fetch_assoc($result)){
+                                                    ?>
+                                                    <option data-tokens="<?php echo $row['nama_kategori']; ?>" value="<?php echo $row['nama_kategori']; ?>"><?php echo $row['nama_kategori']; ?></option>
+                                                    <?php
+                                                        }
+                                                        }
+                                                    ?>
                                                     </option>
                                                 </select>
                                             </div>
@@ -56,12 +81,20 @@
                                         <div class="form-group row">
                                             <label class="control-label col-md-3 col-sm-3">Merk</label>
                                             <div class="col-md-9 col-sm-9">
-                                                <select class="selectpicker col-md-12 col-sm-12 form-control"
-                                                    data-live-search="true">
-                                                    <option data-tokens="ketchup mustard" disabled selected>-- merk --
-                                                    </option>
-                                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                                                    <option data-tokens="frosting">Sugar, Spice and all things nice
+                                                <select class="selectpicker col-md-12 col-sm-12 form-control" data-live-search="true" name="merk">
+                                                    <option data-tokens="ketchup mustard" disabled selected>-- merk --</option>
+                                                    <?php
+                                                        $sql = "SELECT * FROM merk ORDER BY id_merk ASC";
+                                                        $result = mysqli_query($conn, $sql);
+                                                    
+                                                        if (mysqli_num_rows($result)>0){
+                                                            while ($row = mysqli_fetch_assoc($result)){
+                                                    ?>
+                                                    <option data-tokens="<?php echo $row['nama_merk']; ?>" value="<?php echo $row['nama_merk']; ?>"><?php echo $row['nama_merk']; ?></option>
+                                                    <?php
+                                                        }
+                                                        }
+                                                    ?>
                                                     </option>
                                                 </select>
                                             </div>
@@ -69,32 +102,40 @@
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Harga</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" class="form-control" placeholder="Type here...">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="harga">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="control-label col-md-3 col-sm-3">Series</label>
                                             <div class="col-md-9 col-sm-9">
-                                                <select class="selectpicker col-md-12 col-sm-12 form-control"
-                                                    data-live-search="true">
-                                                    <option data-tokens="ketchup mustard" disabled selected>-- series --
-                                                    </option>
-                                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                                                    <option data-tokens="frosting">Sugar, Spice and all things nice
-                                                    </option>
+                                                <select class="selectpicker col-md-12 col-sm-12 form-control" data-live-search="true" name="series">
+                                                    <option data-tokens="ketchup mustard" disabled selected>-- series --</option>
+                                                    <?php
+                                                        $sql = "SELECT * FROM series ORDER BY id_series ASC";
+                                                        $result = mysqli_query($conn, $sql);
+                                                    
+                                                        if (mysqli_num_rows($result)>0){
+                                                            while ($row = mysqli_fetch_assoc($result)){
+                                                    ?>
+                                                    <option data-tokens="<?php echo $row['nama_series']; ?>" value="<?php echo $row['nama_series']; ?>"><?php echo $row['nama_series']; ?></option>
+                                                    <?php
+                                                        }
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Serial Number</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" class="form-control" placeholder="Type here...">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="serial_number">
                                             </div>
                                         </div>
 										<div class="form-group row ">
                                             <label class="control-label col-md-3 col-sm-3 ">Stok</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input type="text" class="form-control" placeholder="Type here...">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="stok">
+                                                <input type="text" class="form-control" placeholder="Type here..." name="posted" value="<?php echo $_SESSION['nama_lengkap']?>" hidden>
                                             </div>
                                         </div>
                                         

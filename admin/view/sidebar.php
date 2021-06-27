@@ -13,7 +13,7 @@
             </div>
             <div class="profile_info">
                 <span>Selamat Datang,</span>
-                <h2>Administrator</h2>
+                <h2><?php echo $_SESSION['nama_lengkap']?></h2>
             </div>
         </div>
 
@@ -37,7 +37,6 @@
                             <li><a href="merk">Merk</a></li>
                             <li><a href="series">Series</a></li>
                             <li><a href="unit_pengadaan">Unit Pengadaan</a></li>
-                            <li><a href="penyerah">Penyerah</a></li>
                         </ul>
                     </li>
                 </ul>

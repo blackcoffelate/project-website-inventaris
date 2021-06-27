@@ -1,3 +1,24 @@
+<?php
+
+require_once "admin/function/connection.php";
+
+session_start();
+
+if(isset($_SESSION['username'])){
+  if($_SESSION['role'] == '0'){
+    header('location: ./admin');
+  }else{
+    header('location: ./user');
+  }
+}
+
+if (isset($_POST['username']) && isset($_POST['password'])){
+  require_once "admin/function/login.php";
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,16 +45,18 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form>
+                    <form method="post">
                         <h1>Login Form</h1>
                         <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
+                            <input type="text" class="form-control" placeholder="Username" name="username" required="" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <input type="password" class="form-control" placeholder="Password" name="password" required="" />
                         </div>
                         <div>
-                            <a class="btn btn-success submit" href="admin">Log in</a>
+                            <button type="submit" class="btn btn-success submit">
+                                Sign In
+                            </button>
                         </div>
                     </form>
                 </section>

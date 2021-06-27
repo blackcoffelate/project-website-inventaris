@@ -1,3 +1,11 @@
+<?php
+
+require_once  "./function/sessions.php";
+
+$access = $_SESSION['role'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,16 +60,41 @@
                                                 </thead>
 
                                                 <tbody>
+                                                    <?php
+                                                        $sql = "SELECT * FROM users ORDER BY id_users ASC";
+                                                        $result = mysqli_query($conn, $sql);
+                                            
+                                                        $count = 1;
+                                                    
+                                                        if (mysqli_num_rows($result)>0){
+                                                            while ($row = mysqli_fetch_assoc($result)){
+                                                    ?>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Sanjaya Putra</td>
-                                                        <td>sanjaya123</td>
-                                                        <td>21232f297a57a5a743894a0e4a801fc3</td>
-                                                        <td>Atasan</td>
-                                                        <td>082185607040</td>
-                                                        <td>Jl. Antasari Permai</td>
-                                                        <td><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="EDIT"><i class="fa fa-pencil"></i></a>  &nbsp; <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="DELETE"><i class="fa fa-trash"></i></a></td>
+                                                        <td><?php echo $count; ?></td>
+                                                        <td><?php echo $row['nama_lengkap']; ?></td>
+                                                        <td><?php echo $row['username']; ?></td>
+                                                        <td><?php echo $row['password']; ?></td>
+                                                        <td>
+                                                            <?php  
+                                                                $jabatan = $row['jabatan'];
+                                                                if($jabatan == "0"){
+                                                                    echo "<i class='fa fa-shield'></i> Administrator";
+                                                                }elseif ($jabatan == "1"){
+                                                                    echo "<i class='fa fa-bullseye'></i> Pimpinan";
+                                                                }else{
+                                                                    echo "<i class='fa fa-dot-circle-o'></i> Anggota";
+                                                                }
+                                                            ?>
+                                                        </td>
+                                                        <td><?php echo $row['nomor_telp']; ?></td>
+                                                        <td><?php echo $row['alamat']; ?></td>
+                                                        <td><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="EDIT"><i class="fa fa-pencil"></i></a>  &nbsp; <a href="delete" onclick="window.location = 'function/anggota_delete.php?id_users=<?php echo $row['id_users']; ?>'; return false;" data-toggle="tooltip" data-placement="top" title="" data-original-title="DELETE"><i class="fa fa-trash"></i></a></td>
                                                     </tr>
+                                                    <?php
+                                                        $count = $count + 1;
+                                                        }
+                                                        }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div>
