@@ -50,7 +50,9 @@ setTimeout(function() {
 }, 1000);
 </script>
 
-<?php }else if ($_SESSION['role'] == '1'){ ?>
+<?php }
+    else if ($_SESSION['role'] == '1'){ 
+?>
 
 <script>
 setTimeout(function() {

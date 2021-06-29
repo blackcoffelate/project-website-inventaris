@@ -150,87 +150,18 @@ if(isset($row_barang['id_barang'])){
                                             <div class="col-md-9 col-sm-9">
                                                 <select class="selectpicker col-md-12 col-sm-12 form-control" data-live-search="true" name="unit_pengadaan">
                                                     <option data-tokens="ketchup mustard" disabled selected>-- unit pengadaan --</option>
-                                                    <option value="SISTEM INFORMASI">SISTEM INFORMASI</option>
-                                                    <option value="OPERASI">OPERASI</option>
-                                                    <option value="KESEHATAN">KESEHATAN</option>
-                                                    <option value="ANGKUTAN DAN FASILITAS PENUMPANG">ANGKUTAN DAN FASILITAS PENUMPANG</option>
-                                                    <option value="ANGGARAN">ANGGARAN</option>
-                                                    <option value="PENJAGAAN DAN PENGUSAHAAN ASET">PENJAGAAN DAN PENGUSAHAAN ASET</option>
-                                                    <option value="JALAN REL DAN JEMBATAN">JALAN REL DAN JEMBATAN</option>
-                                                    <option value="ANGKUTAN BARANG">ANGKUTAN BARANG</option>
-                                                    <option value="IT OPERATION">IT OPERATION</option>
-                                                    <option value="PENJAGAAN ASET DAN KOMERSIALISASI NON ANGKUTAN">PENJAGAAN ASET DAN KOMERSIALISASI NON ANGKUTAN</option>
-                                                    <option value="HUKUM">HUKUM</option>
-                                                    <option value="PERAWATAN BANGUNAN DINAS STASIUN">PERAWATAN BANGUNAN DINAS STASIUN</option>
-                                                    <option value="SARANA">SARANA</option>
-                                                    <option value="PENAGIHAN">PENAGIHAN</option>
-                                                    <option value="PENAGIHAN ASET">PENAGIHAN ASET</option>
-                                                    <option value="PELAYANAN DAN KOMERSIAL">PELAYANAN DAN KOMERSIAL</option>
-                                                    <option value="SUMBER DAYA MANUSIA DAN UMUM">SUMBER DAYA MANUSIA DAN UMUM</option>
-                                                    <option value="TERMINAL DAN LOGISTIK">TERMINAL DAN LOGISTIK</option>
-                                                    <option value="PENGAMANAN">PENGAMANAN</option>
-                                                    <option value="BANGUNAN">BANGUNAN</option>
-                                                    <option value="PENGADAAN BARANG DAN JASA">PENGADAAN BARANG DAN JASA</option>
-                                                    <option value="KEUANGAN">KEUANGAN</option>
-                                                    <option value="OPERASIONAL DAN ADMINISTRASI">OPERASIONAL DAN ADMINISTRASI</option>
-                                                    <option value="UPT CREW KA KELAS 1 KETAPANG">UPT CREW KA KELAS 1 KETAPANG</option>
-                                                    <option value="PAJAK">PAJAK</option>
-                                                    <option value="AKUTANSI">AKUTANSI</option>
-                                                    <option value="ADMINISTRASI PENGAMANAN">ADMINISTRASI PENGAMANAN</option>
-                                                    <option value="MARKETING DAN SALES ANGKUTAN BARANG">MARKETING DAN SALES ANGKUTAN BARANG</option>
-                                                    <option value="DOKUMEN">DOKUMEN</option>
-                                                    <option value="SINYAL, TELEKOMUNIKASI DAN LISTRIK">SINYAL, TELEKOMUNIKASI DAN LISTRIK</option>
-                                                    <option value="UPT WORKSHOP SINTELIS TANJUNG KARANG">UPT WORKSHOP SINTELIS TANJUNG KARANG</option>
-                                                    <option value="UPT RESOR SINTELIS IV.8 PAGARGUNUNG">UPT RESOR SINTELIS IV.8 PAGARGUNUNG</option>
-                                                    <option value="UPT RESOR SINTELIS IV.7 PANINJAWAN">UPT RESOR SINTELIS IV.7 PANINJAWAN</option>
-                                                    <option value="UPT RESOR SINTELIS IV.6 BATURAJA">UPT RESOR SINTELIS IV.6 BATURAJA</option>
-                                                    <option value="UPT RESOR SINTELIS IV.5 MARTAPURA">UPT RESOR SINTELIS IV.5 MARTAPURA</option>
-                                                    <option value="UPT RESOR SINTELIS IV.4 NEGARARATU">UPT RESOR SINTELIS IV.4 NEGARARATU</option>
-                                                    <option value="UPT RESOR SINTELIS IV.3 KOTABUMI">UPT RESOR SINTELIS IV.3 KOTABUMI</option>
-                                                    <option value="UPT RESOR SINTELIS IV.2 REJOSARI">UPT RESOR SINTELIS IV.2 REJOSARI</option>
-                                                    <option value="PENGAMAN OBJEK VITAL DAN ASET">PENGAMAN OBJEK VITAL DAN ASET</option>
-                                                    <option value="IT PLANNING AND GOVERNANCE">IT PLANNING AND GOVERNANCE</option>
-                                                    <option value="PENJAGAAN ASET IV.1 TANJUNGKARANG A">PENJAGAAN ASET IV.1 TANJUNGKARANG A</option>
-                                                    <option value="UPT STASIUN WILAYAH IV.B KOTABUMI">UPT STASIUN WILAYAH IV.B KOTABUMI</option>
-                                                    <option value="UPT STASIUN KELAS 3 LABUANRATU">UPT STASIUN KELAS 3 LABUANRATU</option>
-                                                    <option value="UPT RESOR JALAN REL IV.5 BEKRI">UPT RESOR JALAN REL IV.5 BEKRI</option>
-                                                    <option value="UPT STASIUN KELAS 2 REJOSARI">UPT STASIUN KELAS 2 REJOSARI</option>
-                                                    <option value="HUMASDA">HUMASDA</option>
-                                                    <option value="PENGAMANAN OPERASI KERETA API">PENGAMANAN OPERASI KERETA API</option>
-                                                    <option value="UPT STASIUN WILAY IV.C BATURAJA">UPT STASIUN WILAY IV.C BATURAJA</option>
-                                                    <option value="UPT CREW KA KELAS 3 TANJUNGKARANG">UPT CREW KA KELAS 3 TANJUNGKARANG</option>
-                                                    <option value="UPT CREW KA KELAS BESAR TARAHAN">UPT CREW KA KELAS BESAR TARAHAN</option>
-                                                    <option value="UPT RESOR JALAN REL DAN JEMBATAN WILAYAH IV.E BATURAJA">UPT RESOR JALAN REL DAN JEMBATAN WILAYAH IV.E BATURAJA</option>
-                                                    <option value="UPT RESOR SINYAL, TELEKOMUNIKASI DAN LISTRIK WILAYAH IV.A TANJUNGKARANG">UPT RESOR SINYAL, TELEKOMUNIKASI DAN LISTRIK WILAYAH IV.A TANJUNGKARANG</option>
-                                                    <option value="SUB URUSAN KEAMANAN DAN KETERTIBAN STASIUN">SUB URUSAN KEAMANAN DAN KETERTIBAN STASIUN</option>
-                                                    <option value="UPT CREW KA KELAS BESAR TIGAGAJAH">UPT CREW KA KELAS BESAR TIGAGAJAH</option>
-                                                    <option value="UPT RESOR SINYAL, TELEKOMUNIKASI DAN LISTRIK WILAYAH IV.B NEGARARATU">UPT RESOR SINYAL, TELEKOMUNIKASI DAN LISTRIK WILAYAH IV.B NEGARARATU</option>
-                                                    <option value="IT SUPPORT 1">IT SUPPORT 1</option>
-                                                    <option value="KANTOR PELAYANAN WARTA TANJUNGKARANG">KANTOR PELAYANAN WARTA TANJUNGKARANG</option>
-                                                    <option value="PENDAPATAN TARAHAN">PENDAPATAN TARAHAN</option>
-                                                    <option value="PENJAGAAN ASET IV.3 BLAMBANGANUMPU">PENJAGAAN ASET IV.3 BLAMBANGANUMPU</option>
-                                                    <option value="PENJAGAAN ASET IV.2 KOTABUMI">PENJAGAAN ASET IV.2 KOTABUMI</option>
-                                                    <option value="UPT STASIUN KELAS 1 MARTAPURA">UPT STASIUN KELAS 1 MARTAPURA</option>
-                                                    <option value="UPT STASIUN BESAR C BATURAJA">UPT STASIUN BESAR C BATURAJA</option>
-                                                    <option value="TERMINAL">TERMINAL</option>
-                                                    <option value="UPT DEPO LOKOMOTIF BESAR B TARAHAN">UPT DEPO LOKOMOTIF BESAR B TARAHAN</option>
-                                                    <option value="UPT RESOR JALAN REL IV.11 NEGARARATU">UPT RESOR JALAN REL IV.11 NEGARARATU</option>
-                                                    <option value="UPT RESOR JALAN REL IV.8 KOTABUMI">UPT RESOR JALAN REL IV.8 KOTABUMI</option>
-                                                    <option value="UPT RESOR JALAN REL IV.25 TANJUNGRAMBANG">UPT RESOR JALAN REL IV.25 TANJUNGRAMBANG</option>
-                                                    <option value="UPT RESOR JALAN REL IV.23 PAGARGUNUNG">UPT RESOR JALAN REL IV.23 PAGARGUNUNG</option>
-                                                    <option value="UPT RESOR JALAN REL IV.22 PENINJAWAN">UPT RESOR JALAN REL IV.22 PENINJAWAN</option>
-                                                    <option value="UPT RESOR JALAN REL DAN JEMBATAN WILAYAH IV.A TANJUNGKARANG">UPT RESOR JALAN REL DAN JEMBATAN WILAYAH IV.A TANJUNGKARANG</option>
-                                                    <option value="UPT RESOR JALAN REL DAN JEMBATAN WILAYAH IV.D BLAMBANGANUMPU">UPT RESOR JALAN REL DAN JEMBATAN WILAYAH IV.D BLAMBANGANUMPU</option>
-                                                    <option value="KANTOR PELAYANAN WARTA BATURAJA">KANTOR PELAYANAN WARTA BATURAJA</option>
-                                                    <option value="UPT RESOR JALAN REL IV.3 REJOSARI">UPT RESOR JALAN REL IV.3 REJOSARI</option>
-                                                    <option value="UPT RESOR JALAN REL IV.17 WAYTUBA">UPT RESOR JALAN REL IV.17 WAYTUBA</option>
-                                                    <option value="UPT RESOR JALAN REL IV.4 TEGINENENG">UPT RESOR JALAN REL IV.4 TEGINENENG</option>
-                                                    <option value="UPT STASIUN BESAR A TARAHAN">UPT STASIUN BESAR A TARAHAN</option>
-                                                    <option value="UPT STASIUN WILAYAH IV.A TANJUNGKARANG">UPT STASIUN WILAYAH IV.A TANJUNGKARANG</option>
-                                                    <option value="UPT MEKANIK JALAN REL DAN JEMBATAN TANJUNGKARANG">UPT MEKANIK JALAN REL DAN JEMBATAN TANJUNGKARANG</option>
-                                                    <option value="SERVICE DESK, END USER SUPPORT, AND PERFORMANCE REPORTING">SERVICE DESK, END USER SUPPORT, AND PERFORMANCE REPORTING</option>
-                                                    <option value="IT DESIGN AND DEVELOPMENT">IT DESIGN AND DEVELOPMENT</option>
-
+                                                    <?php
+                                                        $sql = "SELECT * FROM unit_pengadaan ORDER BY id_unit_pengadaan ASC";
+                                                        $result = mysqli_query($conn, $sql);
+                                                    
+                                                        if (mysqli_num_rows($result)>0){
+                                                            while ($row = mysqli_fetch_assoc($result)){
+                                                    ?>
+                                                    <option value="<?php echo $row['nama_unit_pengadaan'] ?>"><?php echo $row['nama_unit_pengadaan'] ?></option>
+                                                    <?php
+                                                        }
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
